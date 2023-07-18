@@ -2,7 +2,7 @@ import sysv_ipc
 import time
 import os
 
-KEY = 100
+KEY = int(input("Enter Queue key to monitor: "))
 mq = sysv_ipc.MessageQueue(KEY, sysv_ipc.IPC_CREAT)
 
 while True:
@@ -10,8 +10,8 @@ while True:
         # Clear the console output
         os.system('clear')  # For Linux/Mac
         # os.system('cls')  # For Windows
-
-        print(f"Queue has {mq.current_messages} messages")
+        print(f"Queue key {KEY}")
+        print(f"Queue has {mq.current_messages} msgs")
         time.sleep(1)
 
     except sysv_ipc.ExistentialError:
