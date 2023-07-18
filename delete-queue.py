@@ -1,6 +1,6 @@
 import sysv_ipc
 
-KEY = 100
+KEY = int(input("Enter Queue key delete: "))
 mq = sysv_ipc.MessageQueue(KEY, sysv_ipc.IPC_CREAT)
 
 mq.remove()
