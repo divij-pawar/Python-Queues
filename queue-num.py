@@ -11,7 +11,9 @@ while True:
         os.system('clear')  # For Linux/Mac
         # os.system('cls')  # For Windows
         print(f"Queue key {KEY}")
-        print(f"Queue has {mq.current_messages} msgs")
+        # Get the total count of messages in the queue
+        total_messages = mq.current_messages
+        print(f"Queue has {total_messages} msgs")
         time.sleep(1)
 
     except sysv_ipc.ExistentialError:

@@ -1,7 +1,7 @@
 import sysv_ipc
 
-key = 100
-mq = sysv_ipc.MessageQueue(key, sysv_ipc.IPC_CREAT)
+KEY = int(input("Enter Queue key to receive messages from: "))
+mq = sysv_ipc.MessageQueue(KEY, sysv_ipc.IPC_CREAT)
 
 while True:
     try:
